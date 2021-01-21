@@ -1,66 +1,64 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="1/17/2021 6:42:24 PM"
+  DTS:CreationDate="1/21/2021 2:45:52 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-JAMSGF3"
   DTS:CreatorName="DESKTOP-JAMSGF3\Nane"
-  DTS:Description="DTS Wizard-generated package"
-  DTS:DTSID="{6F7A95BC-7855-442F-8606-D19056F767A7}"
+  DTS:DTSID="{2A806F0D-5BBC-44DA-888F-45FCF2C388E0}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="1033"
-  DTS:MaxErrorCount="0"
-  DTS:ObjectName="DimLiga_Load"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{2482FF9E-6682-49F2-AEFD-BF500C4F7A3C}">
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{A4DAD76F-47EB-4E67-92F7-77AD3CE6A895}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:refId="Package.ConnectionManagers[LocalHost.SoccerDb 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{D007331F-16B6-458D-9FB1-67061A38F28A}"
-      DTS:ObjectName="DestinationConnectionOLEDB">
+      DTS:DTSID="{07505581-8C19-4FB0-A0F0-448B173C0F8F}"
+      DTS:ObjectName="LocalHost.SoccerDb 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);User ID=&quot;&quot;;Initial Catalog=SoccerDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Persist Security Info=False;Initial File Name=&quot;&quot;;Server SPN=&quot;&quot;;Authentication=&quot;&quot;;Access Token=&quot;&quot;;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SoccerDb;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:refId="Package.ConnectionManagers[LocalHost.SoccerDW 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E39CDD63-0430-4124-A8E3-F787E7959317}"
-      DTS:ObjectName="SourceConnectionOLEDB">
+      DTS:DTSID="{7FB5DC78-4089-44D3-B239-6E5DE8B20A29}"
+      DTS:ObjectName="LocalHost.SoccerDW 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.;Initial Catalog=SoccerDb;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SoccerDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Inicijalni load u dimenziju Liga"
+      DTS:refId="Package\Inicijalni load u dimenziju DomacinGost"
       DTS:CreationName="Microsoft.Pipeline"
-      DTS:DTSID="{A073B75E-8639-431C-82A5-B0CEE6749F33}"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{35158ed5-ad3f-44f4-9b4d-6ed5a3524366}"
       DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:FailPackageOnFailure="True"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Inicijalni load u dimenziju Liga"
+      DTS:ObjectName="Inicijalni load u dimenziju DomacinGost"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          defaultBufferSize="3145728"
           version="1">
           <components>
             <component
-              refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga"
+              refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Destination - SoccerDW_DimLiga"
+              name="Destination - SoccerDW_DimDomacinGost"
               usesDispositions="true"
               version="4">
               <properties>
@@ -71,7 +69,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimLiga]</property>
+                  name="OpenRowset">[dbo].[DimDomacinGost]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -113,68 +111,62 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SoccerDW 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SoccerDW 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input]"
+                  refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="Destination Input">
+                  name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input].Columns[LeagueId]"
-                      cachedDataType="i4"
-                      cachedName="LeagueId"
-                      externalMetadataColumnId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input].ExternalColumns[LigaKey]"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[LeagueId]" />
-                    <inputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input].Columns[Name]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input].Columns[DomacinGost]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="Name"
-                      externalMetadataColumnId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input].ExternalColumns[NazivLige]"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[Name]" />
+                      cachedLength="10"
+                      cachedName="DomacinGost"
+                      externalMetadataColumnId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input].ExternalColumns[DomacinGost]"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output].Columns[DomacinGost]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input].ExternalColumns[LigaKey]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input].ExternalColumns[DomacinGostKey]"
                       dataType="i4"
-                      name="LigaKey" />
+                      name="DomacinGostKey" />
                     <externalMetadataColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input].ExternalColumns[NazivLige]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input].ExternalColumns[DomacinGost]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
-                      name="NazivLige" />
+                      length="10"
+                      name="DomacinGost" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input]">
+                  synchronousInputId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -183,11 +175,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League"
+              refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Source - SoccerDb_League"
+              name="Source - SqlQuerry_VarijablaListDomacinGost"
               usesDispositions="true"
               version="7">
               <properties>
@@ -198,7 +190,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[League]</property>
+                  name="OpenRowset">[dbo].[Matches]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -207,7 +199,11 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @DomacinGost TABLE (DomacinGost VARCHAR (10))
+INSERT INTO @DomacinGost VALUES ('Domacin'), ('Gost')
+
+SELECT*
+FROM @DomacinGost</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -224,7 +220,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -232,103 +228,61 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SoccerDb 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SoccerDb 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output]"
+                  refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[LeagueId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].ExternalColumns[LeagueId]"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[LeagueId]"
-                      name="LeagueId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[Name]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output].Columns[DomacinGost]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].ExternalColumns[Name]"
-                      length="25"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[Name]"
-                      name="Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].ExternalColumns[Country]"
-                      length="15"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].Columns[Country]"
-                      name="Country"
+                      externalMetadataColumnId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output].ExternalColumns[DomacinGost]"
+                      length="10"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output].Columns[DomacinGost]"
+                      name="DomacinGost"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].ExternalColumns[LeagueId]"
-                      dataType="i4"
-                      name="LeagueId" />
-                    <externalMetadataColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output].ExternalColumns[DomacinGost]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output].ExternalColumns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Country" />
+                      length="10"
+                      name="DomacinGost" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[LeagueId]"
-                      dataType="i4"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[LeagueId]"
-                      name="LeagueId" />
-                    <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output].Columns[DomacinGost]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[Name]"
-                      name="Name" />
+                      length="10"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output].Columns[DomacinGost]"
+                      name="DomacinGost" />
                     <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[Country]"
-                      name="Country" />
-                    <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -339,10 +293,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Inicijalni load u dimenziju Liga.Paths[OLE DB Source Output]"
-              endId="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga.Inputs[Destination Input]"
+              refId="Package\Inicijalni load u dimenziju DomacinGost.Paths[OLE DB Source Output]"
+              endId="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League.Outputs[OLE DB Source Output]" />
+              startId="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -361,39 +315,51 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="221,42"
-          Id="Package\Inicijalni load u dimenziju Liga"
-          TopLeft="242.5,165.5" />
+          Size="264,42"
+          Id="Package\Inicijalni load u dimenziju DomacinGost"
+          TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Inicijalni load u dimenziju Liga">
+    design-time-name="Package\Inicijalni load u dimenziju DomacinGost">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="206,42"
-          Id="Package\Inicijalni load u dimenziju Liga\Source - SoccerDb_League"
-          TopLeft="17.5,5.5" />
+          Size="293,42"
+          Id="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost"
+          TopLeft="76.5,60" />
         <NodeLayout
-          Size="234,42"
-          Id="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga"
-          TopLeft="5.50000000000001,107.5" />
+          Size="277,42"
+          Id="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost"
+          TopLeft="112,138" />
         <EdgeLayout
-          Id="Package\Inicijalni load u dimenziju Liga.Paths[OLE DB Source Output]"
-          TopLeft="121.5,47.5">
+          Id="Package\Inicijalni load u dimenziju DomacinGost.Paths[OLE DB Source Output]"
+          TopLeft="223,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="27.5,36"
               Start="0,0"
-              End="0,52.5">
+              End="27.5,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="23.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.5,18"
+                    Point2="27.5,18"
+                    Point3="27.5,22" />
+                  <mssgle:LineSegment
+                    End="27.5,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -406,7 +372,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Inicijalni load u dimenziju Liga\Destination - SoccerDW_DimLiga">
+    design-time-name="Package\Inicijalni load u dimenziju DomacinGost\Destination - SoccerDW_DimDomacinGost">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -415,6 +381,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inicijalni load u dimenziju DomacinGost\Source - SqlQuerry_VarijablaListDomacinGost">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
