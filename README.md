@@ -1,7 +1,7 @@
 # Introduction
 BussinessIntelligenceInFootball is final "thesis" project for faculty.  
-Full business intelligence project based on data from [Kaggle European Soccer data set](https://www.kaggle.com/hugomathien/soccer).
-Full name of final work is "Business intelligence in football: Modelling, Analysis and Reporting "
+Full business intelligence project based on data from [Kaggle European Soccer data set](https://www.kaggle.com/hugomathien/soccer).  
+Full name of final work is "Business intelligence in football: Modelling, Analysis and Reporting "  
 For now work is written just in Bosnian language, but soon it will be translated into English
 
 # Getting Started
