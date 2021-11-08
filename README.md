@@ -35,16 +35,18 @@ Translation of sources:
 ![DimKlub](/IntegrationServicesScreenShoots/DimKlub_DataLoad.png)
 
 Querries for sources
-Translation:
-* sa mjerenjima (wiht tactical setup)
-* bez mjerenja (without tactical setup)
-![DimKlubsQuerries](/IntegrationServicesScreenShoots/KlubLoad.png)
+![DimKlubsQuerries](/IntegrationServicesScreenShoots/SISSquerry_forDimKlub.png)
 
 ### Fact Goals (Fact Golovi)
 
 Flow of data
-Translation of sources: 
-![FactGolovi](/IntegrationServicesScreenShoots/FactGolovi_DataLoad.png)
+Translation of sources:  
+![FactGolovi data flow](/IntegrationServicesScreenShoots/FactGolovi_DataLoad.png)
+
+Querries for soruces  
+![FactGolvo querries home team goals](/IntegrationServicesScreenShoots/SISSquerry_forFactGolovi_goloviDomacin.png)
+  
+![FactGolvo querries away team goals](/IntegrationServicesScreenShoots/SISSquerry_forFactGolovi_goloviGosta.png)
 
 ## PowerBI
 
