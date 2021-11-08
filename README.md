@@ -26,27 +26,24 @@ Reporting is done in PowerBI
 ### Dimension Clubs (DimKlub)
 
 Flow of data
-Translation of sources:
-* Klubovi_SaOcjenamaBezDuplih (clubs with tactical setup, which have unique names of clubs)
-* SviKlubovi_BezOcjenaBezDuplih (all clubs without tactical setup, which have unique names)  
-* Klubovi_SaOcjenamaSamoDuplaImenaKlubova (clubs with tactical setup, just ones which have clubs with same name)
-* SviKlubovi_BezOcjenaSamoDupli (clubs without tactical setup, just clubs which names are repeating)  
 **NOTE! In data set there are 3 pairs of clubs which have same long name of club, for purpose of analysis their long and short club name is connected into new club name to have all clubs with unique name**
-![DimKlub](/IntegrationServicesScreenShoots/DimKlub_DataLoad.png)
+![DimKlub](/IntegrationServicesScreenShoots/SISSdataFlow_DimKlub.png)
 
-Querries for sources
+Querries for sources  
 ![DimKlubsQuerries](/IntegrationServicesScreenShoots/SISSquerry_forDimKlub.png)
 
 ### Fact Goals (Fact Golovi)
 
 Flow of data
-Translation of sources:  
-![FactGolovi data flow](/IntegrationServicesScreenShoots/FactGolovi_DataLoad.png)
+
+![FactGolovi data flow](/IntegrationServicesScreenShoots/SISSdataFlow_FactGolovi.png)
 
 Querries for soruces  
+
 ![FactGolvo querries home team goals](/IntegrationServicesScreenShoots/SISSquerry_forFactGolovi_goloviDomacin.png)
   
 ![FactGolvo querries away team goals](/IntegrationServicesScreenShoots/SISSquerry_forFactGolovi_goloviGosta.png)
+
 
 ## PowerBI
 
