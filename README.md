@@ -25,11 +25,13 @@ Reporting is done in PowerBI
 
 ### Dimension Clubs (DimKlub)
 
-Flow of data
-**NOTE! In data set there are 3 pairs of clubs which have same long name of club, for purpose of analysis their long and short club name is connected into new club name to have all clubs with unique name**
+Flow of data  
+**NOTE! In data set there are 3 pairs of clubs which have same long name of club, for purpose of analysis their long and short club name is connected into new club name to have all clubs with unique name**  
+
 ![DimKlub](/IntegrationServicesScreenShoots/SISSdataFlow_DimKlub.png)
 
 Querries for sources  
+
 ![DimKlubsQuerries](/IntegrationServicesScreenShoots/SISSquerry_forDimKlub.png)
 
 ### Fact Goals (Fact Golovi)
