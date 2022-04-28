@@ -21,7 +21,7 @@ Reporting is done in PowerBI
 
 # Screenshots
 
-## Microsoft Integration Service
+## Microsoft SQL Server Integration Services (SSIS) 
 
 ### Dimension Clubs (DimKlub)
 
